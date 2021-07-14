@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">An Curam</string>
+
     <string name="button_addAnimal">Add an Animal</string>
     <string name="hint_animalName">Animals Name</string>
+    <string name="hint_animalNameIrish">Animals Irish Name</string>
+
 </resources>

@@ -3,6 +3,7 @@
     package="org.wit.ancuram">
 
     <application
+        android:name=".main.MainApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,9 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AnCuram">
         <activity android:name=".activities.AnCuramActivity">
+        </activity>
+        <activity android:name=".activities.AnimalListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
