@@ -12,5 +12,10 @@ class MainApp : Application(), AnkoLogger {
     override fun onCreate() {
         super.onCreate()
         info("An Cúram app started")
+
+        /*animals.add(AnimalModel("Red Fox", "Sionnach"))
+        animals.add(AnimalModel("Common Barn owl", "Scréachóg Reilge"))
+        animals.add(AnimalModel("Irish stoat", "Easóg"))
+         */
     }
 }

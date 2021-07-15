@@ -26,11 +26,14 @@ class AnCuramActivity : AppCompatActivity(), AnkoLogger {
             animal.commonName = animalName.text.toString()
             animal.irishName = animalNameIrish.text.toString()
             if (animal.commonName.isNotEmpty()) {
-                app!!.animals.add(animal.copy())
-                info("add Button Pressed: $animalName")
-                app!!.animals.forEach { info("add Animal Button Pressed: ${it.commonName}, ${it.irishName}")}
-            }
-            else {
+                app.animals.add(animal.copy())
+                info("add Button Pressed: $animal")
+                for (i in app.animals.indices) {
+                    info("Animal[$i]:${app.animals[i]}")
+                }
+                setResult(AppCompatActivity.RESULT_OK)
+                finish()
+            }else {
                 toast ("Please Enter the Animals Name")
             }
         }

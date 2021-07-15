@@ -4,5 +4,6 @@
     <string name="button_addAnimal">Add an Animal</string>
     <string name="hint_animalName">Animals Name</string>
     <string name="hint_animalNameIrish">Animals Irish Name</string>
+    <string name="menu_addAnimal">Add</string>
 
 </resources>
