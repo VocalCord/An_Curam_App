@@ -6,4 +6,6 @@
     <string name="hint_animalNameIrish">Animals Irish Name</string>
     <string name="menu_addAnimal">Add</string>
 
+    <string name="menu_cancelAnimal">Cancel</string>
+
 </resources>

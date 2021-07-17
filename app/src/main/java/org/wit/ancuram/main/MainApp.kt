@@ -3,11 +3,12 @@ package org.wit.ancuram.main
 import android.app.Application
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
+import org.wit.ancuram.models.AnimalMemStore
 import org.wit.ancuram.models.AnimalModel
 
 class MainApp : Application(), AnkoLogger {
 
-    val animals = ArrayList<AnimalModel>()
+    val animals = AnimalMemStore()
 
     override fun onCreate() {
         super.onCreate()

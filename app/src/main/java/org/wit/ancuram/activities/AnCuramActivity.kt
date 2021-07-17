@@ -2,6 +2,8 @@ package org.wit.ancuram.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_ancuram.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
@@ -21,23 +23,41 @@ class AnCuramActivity : AppCompatActivity(), AnkoLogger {
         info("An Cúram Main Activity started..")
         app = application as MainApp
 
+        toolbarAdd.title = title
+        setSupportActionBar(toolbarAdd)
+
+        if (intent.hasExtra("animal_edit")) {
+            animal = intent.extras?.getParcelable<AnimalModel>("animal_edit")!!
+            animalName.setText(animal.commonName)
+            animalNameIrish.setText(animal.irishName)
+        }
 
         btnAdd.setOnClickListener() {
             animal.commonName = animalName.text.toString()
             animal.irishName = animalNameIrish.text.toString()
             if (animal.commonName.isNotEmpty()) {
-                app.animals.add(animal.copy())
-                info("add Button Pressed: $animal")
-                for (i in app.animals.indices) {
-                    info("Animal[$i]:${app.animals[i]}")
-                }
+                app.animals.create(animal.copy())
+                info("add Button Pressed: ${animal}")
                 setResult(AppCompatActivity.RESULT_OK)
                 finish()
-            }else {
-                toast ("Please Enter the Animals Name")
+            } else {
+                toast("Please Enter an animals name")
             }
         }
+
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_animal, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item?.itemId) {
+            R.id.item_cancel -> {
+                finish()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }
