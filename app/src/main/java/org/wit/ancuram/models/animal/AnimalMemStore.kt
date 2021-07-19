@@ -1,4 +1,4 @@
-package org.wit.ancuram.models
+package org.wit.ancuram.models.animal
 
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
@@ -29,6 +29,7 @@ class AnimalMemStore : AnimalStore, AnkoLogger {
         if (foundAnimal != null) {
             foundAnimal.commonName = animal.commonName
             foundAnimal.irishName = animal.irishName
+            foundAnimal.image = animal.image
             logAll()
         }
     }

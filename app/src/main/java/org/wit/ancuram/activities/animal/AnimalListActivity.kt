@@ -1,5 +1,6 @@
-package org.wit.ancuram.activities
+package org.wit.ancuram.activities.animal
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +10,7 @@ import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivityForResult
 import org.wit.ancuram.R
 import org.wit.ancuram.main.MainApp
-import org.wit.ancuram.models.AnimalModel
+import org.wit.ancuram.models.animal.AnimalModel
 
 
 class AnimalListActivity : AppCompatActivity(), AnimalListener {
@@ -36,13 +37,17 @@ class AnimalListActivity : AppCompatActivity(), AnimalListener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.item_add -> startActivityForResult<AnCuramActivity>(0)
+            R.id.item_add -> startActivityForResult<AnimalActivity>(0)
         }
         return super.onOptionsItemSelected(item)
     }
 
     override fun onAnimalClick(animal: AnimalModel) {
-        startActivityForResult(intentFor<AnCuramActivity>().putExtra("animal_edit", animal), 0)
+        startActivityForResult(intentFor<AnimalActivity>().putExtra("animal_edit", animal), 0)
     }
-
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        //recyclerView is a widget in activity_animal_list.xml
+        recyclerView.adapter?.notifyDataSetChanged()
+        super.onActivityResult(requestCode, resultCode, data)
+    }
 }

@@ -10,9 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AnCuram">
-        <activity android:name=".activities.AnCuramActivity">
+        <activity android:name=".activities.animal.AnimalActivity">
         </activity>
-        <activity android:name=".activities.AnimalListActivity">
+        <activity android:name=".activities.animal.AnimalListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

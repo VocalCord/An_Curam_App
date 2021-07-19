@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.AnCuramActivity">
+    tools:context=".activities.animal.AnimalActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,13 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
-            app:elevation="0dip"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            app:elevation="0dip">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarAdd"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:theme="@style/MyToolbar">
+            </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
         <ScrollView
@@ -63,6 +64,24 @@
                     android:textSize="14sp" />
 
                 <Button
+                    android:id="@+id/chooseImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
+                    android:text="@string/button_addImage"
+                    android:background="@color/princeton_Orange"
+                    android:textColor="@color/rich_Black"
+                    android:textSize="16sp"/>
+
+                <ImageView
+                    android:id="@+id/animalImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_launcher"/>
+
+                <Button
                     android:id="@+id/btnAdd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -70,7 +89,9 @@
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:stateListAnimator="@null"
-                    android:text="@string/button_addAnimal"
+                    android:text="@string/menu_addAnimal"
+                    android:background="@color/princeton_Orange"
+                    android:textColor="@color/rich_Black"
                     android:textSize="16sp" />
 
             </LinearLayout>

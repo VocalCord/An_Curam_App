@@ -1,4 +1,6 @@
-package org.wit.ancuram.models
+package org.wit.ancuram.models.animal
+
+import org.wit.ancuram.models.animal.AnimalModel
 
 interface AnimalStore {
         fun findAll(): List<AnimalModel>

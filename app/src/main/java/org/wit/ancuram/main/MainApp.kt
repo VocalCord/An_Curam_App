@@ -4,7 +4,6 @@ import android.app.Application
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import org.wit.ancuram.models.AnimalMemStore
-import org.wit.ancuram.models.AnimalModel
 
 class MainApp : Application(), AnkoLogger {
 
