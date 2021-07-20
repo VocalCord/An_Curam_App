@@ -1,15 +1,20 @@
 <resources>
     <string name="app_name">An Curam</string>
 
-    <string name="save_addAnimal">Save Animal</string>
+    //animal
     <string name="hint_animalName">Animals Name</string>
     <string name="hint_animalNameIrish">Animals Irish Name</string>
+    <string name="enter_animal_name"> Please Enter the Animals Name </string>
+
     <string name="menu_addAnimal">Add</string>
     <string name="menu_cancelAnimal">Cancel</string>
-    <string name="enter_animal_name"> Please Enter the Animals Name </string>
+    <string name="menu_deleteAnimal">Delete</string>
+    <string name="save_addAnimal">Save Animal</string>
 
     <string name="button_addImage"> Add Image </string>
     <string name="select_animal_image">Select Animal image</string>
     <string name="change_animal_image">Change Animal Image</string>
     <string name="animal_image">Animal Image</string>
+    //animal-End
+
 </resources>

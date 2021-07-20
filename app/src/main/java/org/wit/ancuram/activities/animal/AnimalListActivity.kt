@@ -7,9 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_animal_list.*
 import org.jetbrains.anko.intentFor
-import org.jetbrains.anko.startActivityForResult
 import org.wit.ancuram.R
 import org.wit.ancuram.main.MainApp
+import org.jetbrains.anko.startActivityForResult
 import org.wit.ancuram.models.animal.AnimalModel
 
 
@@ -24,7 +24,7 @@ class AnimalListActivity : AppCompatActivity(), AnimalListener {
 
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
-        recyclerView.adapter = AnimalAdapter(app.animals.findAll(), this)
+        loadAnimals()
 
         toolbar.title = title
         setSupportActionBar(toolbar)
@@ -46,8 +46,16 @@ class AnimalListActivity : AppCompatActivity(), AnimalListener {
         startActivityForResult(intentFor<AnimalActivity>().putExtra("animal_edit", animal), 0)
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        //recyclerView is a widget in activity_animal_list.xml
-        recyclerView.adapter?.notifyDataSetChanged()
+        loadAnimals()
         super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    private fun loadAnimals() {
+        showAnimals(app.animals.findAll())
+    }
+
+    fun showAnimals (animals: List<AnimalModel>) {
+        recyclerView.adapter = AnimalAdapter(animals, this)
+        recyclerView.adapter?.notifyDataSetChanged()
     }
 }

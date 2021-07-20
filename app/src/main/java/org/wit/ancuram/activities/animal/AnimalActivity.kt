@@ -69,12 +69,17 @@ class AnimalActivity : AppCompatActivity(), AnkoLogger {
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_animal, menu)
+        if (edit && menu != null) menu.getItem(0).setVisible(true)
         return super.onCreateOptionsMenu(menu)
     }
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId) {
+            R.id.item_delete -> {
+                app.animals.delete(animal)
+                finish()
+            }
             R.id.item_cancel -> {
                 finish()
             }

@@ -34,6 +34,10 @@ class AnimalMemStore : AnimalStore, AnkoLogger {
         }
     }
 
+    override fun delete(animal: AnimalModel) {
+        animals.remove(animal)
+    }
+
     fun logAll() {
         animals.forEach{ info("${it}") }
     }
