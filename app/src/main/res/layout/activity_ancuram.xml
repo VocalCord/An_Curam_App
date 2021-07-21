@@ -79,7 +79,8 @@
                     android:id="@+id/animalImage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@mipmap/ic_launcher"/>
+                    app:srcCompat="@mipmap/ic_launcher"
+                    android:contentDescription="@string/todo" />
 
                 <Button
                     android:id="@+id/btnAdd"
@@ -94,6 +95,18 @@
                     android:textColor="@color/rich_Black"
                     android:textSize="16sp" />
 
+                <Button
+                    android:id="@+id/animalSighting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/button_sighting"
+                    android:background="@color/princeton_Orange"
+                    android:textColor="@color/rich_Black"
+                    android:textSize="16sp"/>
             </LinearLayout>
         </ScrollView>
     </RelativeLayout>

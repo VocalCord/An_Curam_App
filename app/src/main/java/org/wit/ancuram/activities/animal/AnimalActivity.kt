@@ -8,6 +8,7 @@ import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_ancuram.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
+import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast
 import org.wit.ancuram.R
 import org.wit.ancuram.helpers.readImage
@@ -15,6 +16,7 @@ import org.wit.ancuram.helpers.readImageFromPath
 import org.wit.ancuram.helpers.showImagePicker
 import org.wit.ancuram.main.MainApp
 import org.wit.ancuram.models.animal.AnimalModel
+import org.wit.ancuram.models.animal.Sighting
 
 class AnimalActivity : AppCompatActivity(), AnkoLogger {
 
@@ -23,6 +25,9 @@ class AnimalActivity : AppCompatActivity(), AnkoLogger {
     var edit = false
 
     val IMAGE_REQUEST = 1
+
+    val SIGHTING_REQUEST = 2
+    var sighting = Sighting(52.245696, -7.139102, 15f)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +48,20 @@ class AnimalActivity : AppCompatActivity(), AnkoLogger {
             if (animal.image != null) {
                 chooseImage.setText(R.string.change_animal_image)
             }
+        }
+
+        animalSighting.setOnClickListener {
+            startActivityForResult(intentFor<MapsActivity>().putExtra("sighting", sighting), SIGHTING_REQUEST)
+        }
+
+        animalSighting.setOnClickListener {
+            val sighting = Sighting(52.245696, -7.139102, 15f)
+            if (animal.zoom != 0f) {
+                sighting.lat =  animal.lat
+                sighting.lng = animal.lng
+                sighting.zoom = animal.zoom
+            }
+            startActivityForResult(intentFor<MapsActivity>().putExtra("sighting", sighting), SIGHTING_REQUEST)
         }
 
         btnAdd.setOnClickListener() {
@@ -97,6 +116,16 @@ class AnimalActivity : AppCompatActivity(), AnkoLogger {
                     chooseImage.setText(R.string.change_animal_image)
                 }
             }
+            SIGHTING_REQUEST -> {
+                if (data != null) {
+                    val sighting = data.extras?.getParcelable<Sighting>("sighting")!!
+                    animal.lat = sighting.lat
+                    animal.lng = sighting.lng
+                    animal.zoom = sighting.zoom
+                }
+            }
         }
     }
+
+
 }

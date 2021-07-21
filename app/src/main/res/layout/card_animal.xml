@@ -8,17 +8,20 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="112dp"
         android:padding="16dp">
 
         <ImageView
             android:id="@+id/imageIcon"
-            android:contentDescription="@string/animal_image"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="141dp"
+            android:layout_height="96dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="16dp"/>
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="162dp"
+            android:contentDescription="@string/animal_image" />
 
         <TextView
             android:id="@+id/animalName"

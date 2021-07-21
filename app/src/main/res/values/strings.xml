@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">An Curam</string>
 
-    //animal
+
     <string name="hint_animalName">Animals Name</string>
     <string name="hint_animalNameIrish">Animals Irish Name</string>
     <string name="enter_animal_name"> Please Enter the Animals Name </string>
@@ -15,6 +15,9 @@
     <string name="select_animal_image">Select Animal image</string>
     <string name="change_animal_image">Change Animal Image</string>
     <string name="animal_image">Animal Image</string>
-    //animal-End
+    <string name="todo">TODO</string>
+
+    <string name="button_sighting">Add Sighting</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

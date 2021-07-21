@@ -46,6 +46,9 @@ class AnimalJSONStore : AnimalStore, AnkoLogger {
             foundAnimal.commonName = animal.commonName
             foundAnimal.irishName = animal.irishName
             foundAnimal.image = animal.image
+            foundAnimal.lat = animal.lat
+            foundAnimal.lng = animal.lng
+            foundAnimal.zoom = animal.zoom
 
         }
         serialize()
